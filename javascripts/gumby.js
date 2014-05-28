@@ -5,13 +5,13 @@ $(function () {
         set: function (name, val) {
             if (typeof(Storage) !== "undefined")
             {
-                sessionStorage.setItem(name, val);
+                localStorage.setItem(name, val);
             }
         }
         , get: function (name) {
             if (typeof(Storage) !== "undefined")
             {
-                return sessionStorage.getItem(name);
+                return localStorage.getItem(name);
             }
             else {
                 console.log('no local storage');
