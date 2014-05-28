@@ -21,7 +21,10 @@ $(function () {
     };
 
     var remember = function (field) {
+        console.log('...', field);
         var $field = $('#' + field);
+        console.log($field);
+        console.log(session.get(field));
         $field.val(session.get(field));
         $('button').click(function () {
             session.set(field, $field.val());
