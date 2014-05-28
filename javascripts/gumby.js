@@ -3,17 +3,15 @@
 $(function () {
     var session = {
         set: function (name, val) {
-            name = '_' + name + '_';
             if (typeof(Storage) !== "undefined")
             {
-                sessionStorage[name] = val;
+                sessionStorage.setItem(name, val);
             }
         }
         , get: function (name) {
-            name = '_' + name + '_';
             if (typeof(Storage) !== "undefined")
             {
-                return sessionStorage[name];
+                return sessionStorage.getItem(name);
             }
             else {
                 console.log('no local storage');
