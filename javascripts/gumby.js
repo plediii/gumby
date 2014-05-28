@@ -8,10 +8,11 @@ $(function () {
         })
             .error(function (err) {
                 console.log('Error: ', err);
-                // $('#notification').text()
+                $('#notification').text('' + err.status + ' ' + err.responseText);
             })
             .success(function () {
-                console.log('Success');
+                // $('#notification').text('' + err.status + ' ' + err.responseText);
+                console.log(arguments);
             });
     });
 });
