@@ -39,6 +39,9 @@ $(function () {
         $.ajax({
             url: $('#target').val() + '?' + encodeURIComponent($('#key').val()) + '=' + encodeURIComponent($('#value').val())
             , type: 'PUT'
+            , xhrFields: {
+                withCredentials: true
+            }
         })
             .error(function (err) {
                 console.log('Error: ', err);
