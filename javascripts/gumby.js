@@ -21,9 +21,10 @@ $(function () {
     };
 
     var remember = function (field) {
-        $('#' + field).val(session.get(field));
+        var $field = $('#' + field);
+        $field.val(session.get(field));
         $('button').click(function () {
-            session.set(field, $('#' + field).val());
+            session.set(field, $field.val());
         });
     };
 
