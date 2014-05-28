@@ -2,11 +2,16 @@
 
 $(function () {
     $('button').click(function () {
-        console.log({
+        $.ajax({
             url: $('#target').val() + '?' + encodeURIComponent($('#key').val()) + '=' + encodeURIComponent($('#value').val())
             , type: 'PUT'
-        });
-        // $.ajax({
-        // })
+        })
+            .error(function (err) {
+                console.log('Error: ', err);
+                // $('#notification').text()
+            })
+            .success(function () {
+                console.log('Success');
+            });
     });
 });
