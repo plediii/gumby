@@ -10,9 +10,8 @@ $(function () {
                 console.log('Error: ', err);
                 $('#notification').text('' + err.status + ' ' + err.responseText);
             })
-            .success(function () {
-                // $('#notification').text('' + err.status + ' ' + err.responseText);
-                console.log(arguments);
+            .success(function (body, type, err) {
+                $('#notification').text('' + err.status + ' ' + err.responseText);
             });
     });
 });
